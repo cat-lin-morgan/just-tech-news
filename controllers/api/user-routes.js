@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
     })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //our GET route to get api/users/1
@@ -124,7 +124,7 @@ router.put('/:id', (req, res) => {
         }
     }).then(dbUserData => {
         if(!dbUserData[0]) {
-            res.status(404).json({message: 'No user found with this is'});
+            res.status(404).json({ message: 'No user found with this id' });
             return;
         }
         res.json(dbUserData);
@@ -153,7 +153,7 @@ router.delete('/:id', (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            req.status(404).json({ message: 'No user found with this id' });
+            res.status(404).json({ message: 'No user found with this id' });
             return;
         }
         res.json(dbUserData);

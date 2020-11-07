@@ -60,7 +60,7 @@ User.init(
               updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
               return updatedUserData;
             }
-          },
+        },
         //tables config goes heres
         // pass in our imported sequelize connection (the direct connection to our database)
         sequelize,
