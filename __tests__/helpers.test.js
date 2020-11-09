@@ -9,13 +9,14 @@ test('format_date() returns a date string', () =>{
     expect(format_date(date)).toBe('3/20/2020');
 });
 
-// //test for plural
-// test('format_plural() returns a plural when it recieves a value greater than one', () => {
-//     let word = 'Lion';
-//     let amount = 2;
+//test for plural
+test('format_plural() returns a plural when it recieves a value greater than one', () => {
+    let word = 'Lion';
+    let amount = 2;
 
-//     expect(format_plural(word, amount).toBe('Lions'));
-// }); // how do i get this to work and do they want tests in the homework?
+    expect(format_plural(word, amount)).toBe('Lions');
+    // expect(format_plural('tiger', 3)).toBe('tigers');
+});
 
 //testing url shortening
 test('format_url() returns a simplified url string', () => {
