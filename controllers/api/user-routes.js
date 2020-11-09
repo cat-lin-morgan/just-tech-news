@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
 });
 
 //our POST api/users
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -77,7 +77,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 //this will be the post route that logs the user in
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
     User.findOne({
         where: {
             email: req.body.email
@@ -136,7 +136,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 //this is the post request to logout
-router.post('/logout', withAuth, (req, res) => {
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
