@@ -5,7 +5,8 @@
     </div>
     <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
-        {{format_date created_at}}
+        {{format_date created_at}} 
+        {{!-- should be createdAt --}}
         |
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
